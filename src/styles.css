@@ -1,0 +1,119 @@
+body {
+  font-family: "Comfortaa", cursive;
+  color: #fff;
+}
+
+hr {
+  border-top: 2px solid #000;
+  margin: 30px 0 20px 0;
+}
+
+.main-page {
+  background: linear-gradient(
+    109.6deg,
+    rgb(0, 0, 0) 11.2%,
+    rgb(11, 132, 145) 91.1%
+  );
+  text-align: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 40px 45px;
+}
+
+.city-name {
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.current-date {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.current-deg {
+  font-size: 30px;
+  position: relative;
+  top: -20px;
+}
+
+.today-low {
+  font-size: 20px;
+
+  margin-right: 30px;
+}
+
+.today-high {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 18px;
+}
+
+.info-box {
+  margin-top: 30px;
+  font-size: 13px;
+}
+
+.description {
+  text-transform: capitalize;
+}
+
+.icons {
+  width: 35px;
+  margin-bottom: 10px;
+}
+
+.temp {
+  font-size: 14px;
+}
+
+.search-section {
+  margin-top: 50px;
+}
+
+.search-box {
+  width: 60%;
+  background-color: #dece9c;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-size: small;
+  padding: 5px;
+  border: 1px solid #1a1831;
+  border-radius: 30px;
+}
+
+.btn {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 5px 15px;
+  transition: all 200ms ease-in-out;
+}
+
+.btn-primary {
+  background-color: #1a1831;
+}
+
+.btn-primary:hover {
+  background-color: #a21232;
+}
+
+.btn-secondary {
+  background-color: #a21232;
+}
+
+.btn-secondary:hover {
+  background-color: #1a1831;
+}
+
+@media screen and (min-width: 90px) and (max-width: 600px) {
+  .search-box {
+    width: 50%;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+}
