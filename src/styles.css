@@ -8,14 +8,14 @@ hr {
   margin: 30px 0 20px 0;
 }
 
-.main-wrapper {
+#main-wrapper {
   display: block;
   margin: 0 auto;
   max-width: 600px;
 
 }
 
-.main-page {
+#main-page {
   background: linear-gradient(
     109.6deg,
     rgb(0, 0, 0) 11.2%,
@@ -28,29 +28,33 @@ hr {
   padding: 40px 45px;
 }
 
-.city-name {
+#city-name {
   color: #fff;
   text-transform: capitalize;
 }
 
-.current-date {
+#current-date {
   font-size: 15px;
   margin-bottom: 20px;
 }
 
-.current-deg {
+#current-date::first-letter {
+  text-transform: capitalize;
+}
+
+#current-deg {
   font-size: 30px;
   position: relative;
   top: -20px;
 }
 
-.today-low {
+#today-low {
   font-size: 20px;
 
   margin-right: 30px;
 }
 
-.today-high {
+#today-high {
   font-size: 20px;
   font-weight: bold;
   margin-left: 18px;

@@ -1,35 +1,40 @@
-let now = new Date();
-let day = now.getDay();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let zero = 0;
-let currentDate = document.querySelector(".current-date");
 let form = document.querySelector(".form");
 let button = document.querySelector(".btn-secondary");
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+function formatDate(timeStamp) {
+  let now = new Date();
+  let day = now.getDay();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let zero = 0;
+  let currentDate = document.querySelector("#current-date");
 
-if (minutes >= 10) {
-  zero = "";
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  if (minutes >= 10) {
+    zero = "";
+  }
+
+  currentDate.innerHTML = `last update : ${days[day]} ${zero}${hours} : ${zero}${minutes}`;
 }
 
 function showWeather(response) {
-  document.querySelector(".city-name").innerHTML = response.data.name;
-  document.querySelector(".current-deg").innerHTML = Math.round(
+  document.querySelector("#city-name").innerHTML = response.data.name;
+  document.querySelector("#current-deg").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector(".today-low").innerHTML = Math.round(
+  document.querySelector("#today-low").innerHTML = Math.round(
     response.data.main.temp_min
   );
-  document.querySelector(".today-high").innerHTML = Math.round(
+  document.querySelector("#today-high").innerHTML = Math.round(
     response.data.main.temp_max
   );
   document.querySelector(".description").innerHTML =
@@ -40,6 +45,7 @@ function showWeather(response) {
   document.querySelector(".wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  formatDate(response.data.dt * 1000);
 }
 
 function searchCity(city) {
@@ -67,8 +73,6 @@ function showPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-
-currentDate.innerHTML = `${days[day]} ${hours} : ${zero}${minutes}`;
 
 form.addEventListener("submit", showCity);
 button.addEventListener("click", showPosition);
