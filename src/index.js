@@ -6,7 +6,6 @@ function formatDate(timeStamp) {
   let day = now.getDay();
   let hours = now.getHours();
   let minutes = now.getMinutes();
-  let zero = 0;
   let currentDate = document.querySelector("#current-date");
 
   let days = [
@@ -19,11 +18,15 @@ function formatDate(timeStamp) {
     "Saturday",
   ];
 
-  if (minutes >= 10) {
-    zero = "";
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
   }
 
-  currentDate.innerHTML = `last update : ${days[day]} ${zero}${hours} : ${zero}${minutes}`;
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  currentDate.innerHTML = `last update : ${days[day]} ${hours} : ${minutes}`;
 }
 
 function showWeather(response) {
