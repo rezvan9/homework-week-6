@@ -8,6 +8,13 @@ hr {
   margin: 30px 0 20px 0;
 }
 
+.main-wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+
+}
+
 .main-page {
   background: linear-gradient(
     109.6deg,
@@ -17,9 +24,6 @@ hr {
   text-align: center;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  max-width: 600px;
-  display: block;
-  margin: 0 auto;
   margin-top: 50px;
   padding: 40px 45px;
 }
@@ -119,7 +123,7 @@ a {
   font-size: 16px;
 }
 
-a:hover{
+a:hover {
   text-decoration: underline;
 }
 
@@ -132,5 +136,3 @@ a:hover{
     font-size: 13px;
   }
 }
-
-
