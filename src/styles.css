@@ -42,6 +42,10 @@ hr {
   text-transform: capitalize;
 }
 
+.top-img {
+  margin-bottom: 10px;
+}
+
 #current-deg {
   font-size: 30px;
   position: relative;
