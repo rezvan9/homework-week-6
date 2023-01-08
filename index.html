@@ -28,120 +28,126 @@
   <body>
     <div id="container">
       <div id="main-wrapper">
-      <div id="main-page">
-        <h1 id="city-name"></h1>
-        <h4 id="current-date"></h4>
+        <div id="main-page">
+          <h1 id="city-name"></h1>
+          <h4 id="current-date"></h4>
 
-        <br />
+          <br />
+          <div class="degrees">
+            <span id="celsius"><a href="#" class="link-primary">°C</a> </span>
+            |
+            <span id="fahrenheit"
+              ><a href="#" class="link-primary">°F</a>
+            </span>
+          </div>
+          <br />
+          <strong id="current-deg"></strong>
+          <br />
+          <span id="today-low"></span>
+          <span id="today-high"></span>
 
-        <br />
-        <strong id="current-deg">°C</strong>
-        <br />
-        <span id="today-low">°</span>
-        <span id="today-high">°</span>
+          <div class="row info-box">
+            <div class="description col"></div>
+            <div class="col">Humidity : <span class="humidity"></span>%</div>
+            <div class="col">Wind : <span class="wind"></span> km/h</div>
+          </div>
 
-        <div class="row info-box">
-          <div class="description col"></div>
-          <div class="col">Humidity : <span class="humidity"></span>%</div>
-          <div class="col">Wind : <span class="wind"></span> km/h</div>
+          <hr />
+          <!-- ----------------------------------------------------------------------------------- -->
+          <div class="row">
+            <div class="col">
+              <p>Tue</p>
+              <img
+                src="images/weather icons-fat/partly-cloudy.png"
+                alt="weather-icons"
+                class="icons"
+              />
+              <br />
+              <span class="temp">
+                1°/
+                <strong>5°</strong>
+              </span>
+            </div>
+            <!-- -------------------------------------------------------------------------------------------- -->
+            <div class="col">
+              <p>Wed</p>
+              <img
+                src="images/weather icons-fat/cloud.png"
+                alt="weather-icons"
+                class="icons"
+              />
+              <br />
+              <span class="temp">
+                1°/
+                <strong>5°</strong>
+              </span>
+            </div>
+            <!-- -------------------------------------------------------------------------------------------- -->
+            <div class="col">
+              <p>Thu</p>
+              <img
+                src="images/weather icons-fat/icons8-sun-64.svg"
+                alt="weather-icons"
+                class="icons"
+              />
+              <br />
+              <span class="temp">
+                1°/
+                <strong>5°</strong>
+              </span>
+            </div>
+            <!-- ------------------------------------------------------------------------------------------- -->
+            <div class="col">
+              <p>Fri</p>
+              <img
+                src="images/weather icons-fat/rain.png"
+                alt="weather-icons"
+                class="icons"
+              />
+              <br />
+              <span class="temp">
+                1°/
+                <strong>5°</strong>
+              </span>
+            </div>
+            <!-- ------------------------------------------------------------------------------------------- -->
+            <div class="col">
+              <p>Sat</p>
+              <img
+                src="images/weather icons-fat/icons8-sun-64.svg"
+                alt="weather-icons"
+                class="icons"
+              />
+              <br />
+              <span class="temp">
+                1°/
+                <strong>5°</strong>
+              </span>
+            </div>
+          </div>
+          <!-- ----------------------------- SEARCH SECTION -------------------------------------------- -->
+          <div class="search-section">
+            <form action="#" class="form">
+              <input
+                type="search"
+                class="search-box"
+                placeholder="search city here"
+                autofocus
+              />
+              <input type="submit" value="search" class="btn btn-primary" />
+              <button class="btn btn-secondary">current</button>
+            </form>
+          </div>
         </div>
-
-        <hr />
-        <!-- ----------------------------------------------------------------------------------- -->
-        <div class="row">
-          <div class="col">
-            <p>Tue</p>
-            <img
-              src="images/weather icons-fat/partly-cloudy.png"
-              alt="weather-icons"
-              class="icons"
-            />
-            <br />
-            <span class="temp">
-              1°/
-              <strong>5°</strong>
-            </span>
-          </div>
-          <!-- -------------------------------------------------------------------------------------------- -->
-          <div class="col">
-            <p>Wed</p>
-            <img
-              src="images/weather icons-fat/cloud.png"
-              alt="weather-icons"
-              class="icons"
-            />
-            <br />
-            <span class="temp">
-              1°/
-              <strong>5°</strong>
-            </span>
-          </div>
-          <!-- -------------------------------------------------------------------------------------------- -->
-          <div class="col">
-            <p>Thu</p>
-            <img
-              src="images/weather icons-fat/icons8-sun-64.svg"
-              alt="weather-icons"
-              class="icons"
-            />
-            <br />
-            <span class="temp">
-              1°/
-              <strong>5°</strong>
-            </span>
-          </div>
-          <!-- ------------------------------------------------------------------------------------------- -->
-          <div class="col">
-            <p>Fri</p>
-            <img
-              src="images/weather icons-fat/rain.png"
-              alt="weather-icons"
-              class="icons"
-            />
-            <br />
-            <span class="temp">
-              1°/
-              <strong>5°</strong>
-            </span>
-          </div>
-          <!-- ------------------------------------------------------------------------------------------- -->
-          <div class="col">
-            <p>Sat</p>
-            <img
-              src="images/weather icons-fat/icons8-sun-64.svg"
-              alt="weather-icons"
-              class="icons"
-            />
-            <br />
-            <span class="temp">
-              1°/
-              <strong>5°</strong>
-            </span>
-          </div>
-        </div>
-        <!-- ----------------------------- SEARCH SECTION -------------------------------------------- -->
-        <div class="search-section">
-          <form action="#" class="form">
-            <input
-              type="search"
-              class="search-box"
-              placeholder="search city here"
-              autofocus
-            />
-            <input type="submit" value="search" class="btn btn-primary" />
-            <button class="btn btn-secondary">current</button>
-          </form>
-        </div>
-      </div>
-      <small class="info"
-        ><a
-          href="https://github.com/rezvan9/homework-week-6"
-          target="_blank"
-          class="link-primary"
-          >Open-source code</a
+        <small class="info"
+          ><a
+            href="https://github.com/rezvan9/homework-week-6"
+            target="_blank"
+            class="link-primary"
+            >Open-source code</a
+          >
+          , by Rezvan Asadi</small
         >
-        , by Rezvan Asadi</small
-      >
       </div>
     </div>
 
