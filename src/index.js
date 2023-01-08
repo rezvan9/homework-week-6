@@ -30,6 +30,10 @@ function formatDate(timeStamp) {
 }
 
 function showWeather(response) {
+  
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src",`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#current-deg").innerHTML = Math.round(
     response.data.main.temp

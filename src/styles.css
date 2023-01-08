@@ -35,16 +35,14 @@ hr {
 
 #current-date {
   font-size: 15px;
-  margin-bottom: 20px;
+  
 }
 
 #current-date::first-letter {
   text-transform: capitalize;
 }
 
-.top-img {
-  margin-bottom: 10px;
-}
+
 
 #current-deg {
   font-size: 30px;
