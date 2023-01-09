@@ -35,14 +35,20 @@ hr {
 
 #current-date {
   font-size: 15px;
-  
 }
 
 #current-date::first-letter {
   text-transform: capitalize;
 }
 
+.degrees .active {
+  color: #fff;
+  cursor: default;
+}
 
+.degrees .active:hover {
+  text-decoration: none;
+}
 
 #current-deg {
   font-size: 30px;

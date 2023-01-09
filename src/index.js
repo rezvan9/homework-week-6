@@ -1,6 +1,3 @@
-let form = document.querySelector(".form");
-let button = document.querySelector(".btn-secondary");
-
 function formatDate(timeStamp) {
   let now = new Date();
   let day = now.getDay();
@@ -26,26 +23,38 @@ function formatDate(timeStamp) {
     hours = `0${hours}`;
   }
 
-  currentDate.innerHTML = `last update : ${days[day]} ${hours} : ${minutes}`;
+  currentDate.innerHTML = `last updated : ${days[day]} ${hours} : ${minutes}`;
 }
 
 function showWeather(response) {
-  
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src",`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#current-deg").innerHTML = Math.round(
     response.data.main.temp
   );
+
+  celsiusTemp = response.data.main.temp;
+
   document.querySelector("#today-low").innerHTML = Math.round(
     response.data.main.temp_min
   );
+
+  todayLow = response.data.main.temp_min;
+
   document.querySelector("#today-high").innerHTML = Math.round(
     response.data.main.temp_max
   );
+
+  todayHigh = response.data.main.temp_max;
+
   document.querySelector(".description").innerHTML =
     response.data.weather[0].description;
+
   document.querySelector(".humidity").innerHTML = Math.round(
     response.data.main.humidity
   );
@@ -64,6 +73,7 @@ function searchCity(city) {
 
 function showCity(event) {
   event.preventDefault();
+
   let city = document.querySelector(".search-box").value;
   searchCity(city);
 }
@@ -81,7 +91,51 @@ function showPosition(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function showFahrenheit(event) {
+  event.preventDefault();
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+
+  let fahrenheitTemp = Math.round((celsiusTemp * 9) / 5 + 32);
+
+  let currentDegree = document.querySelector("#current-deg");
+  currentDegree.innerHTML = fahrenheitTemp;
+
+  document.querySelector("#today-low").innerHTML = Math.round(
+    (todayLow * 9) / 5 + 32
+  );
+
+  document.querySelector("#today-high").innerHTML = Math.round(
+    (todayHigh * 9) / 5 + 32
+  );
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+
+  document.querySelector("#current-deg").innerHTML = Math.round(celsiusTemp);
+  document.querySelector("#today-low").innerHTML = Math.round(todayLow);
+  document.querySelector("#today-high").innerHTML = Math.round(todayHigh);
+}
+
+let celsiusTemp = null;
+let todayLow = null;
+let todayHigh = null;
+
+let form = document.querySelector(".form");
 form.addEventListener("submit", showCity);
+
+let button = document.querySelector(".btn-secondary");
 button.addEventListener("click", showPosition);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsius);
 
 searchCity("banff");
