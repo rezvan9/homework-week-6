@@ -26,6 +26,36 @@ function formatDate(timeStamp) {
   currentDate.innerHTML = `last updated : ${days[day]} ${hours} : ${minutes}`;
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Tue","Wed","Thu"];
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function(day){
+
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                  <p class="date">${day}</p>
+                  <img
+                    src="images/weather icons-fat/partly-cloudy.png"
+                    alt="weather-icons"
+                    class="icons"
+                  />
+                  <br />
+                  <span class="temp">
+                    <span class="low-temp">1°</span>
+                    <strong>5°</strong>
+                  </span>
+                </div>
+              `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
@@ -139,3 +169,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
 
 searchCity("banff");
+showForecast();
