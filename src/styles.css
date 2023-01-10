@@ -5,7 +5,7 @@ body {
 
 hr {
   border-top: 2px solid #000;
-  margin: 30px 0 20px 0;
+  margin: 10px 0 20px 0;
 }
 
 #main-wrapper {
@@ -34,6 +34,7 @@ hr {
 
 #current-date {
   font-size: 15px;
+  margin-bottom: 0;
 }
 
 #current-date::first-letter {
@@ -78,11 +79,13 @@ hr {
 
  .date {
   opacity: 0.6;
+  margin-bottom: 5px;
 }
 
 .icons {
   width: 35px;
   margin-bottom: 10px;
+  
 }
 
 .temp {
@@ -94,7 +97,7 @@ hr {
 }
 
 .search-section {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .search-box {
