@@ -58,7 +58,7 @@ hr {
 
 #today-low {
   font-size: 20px;
-
+  opacity: 0.7;
   margin-right: 30px;
 }
 
@@ -77,7 +77,8 @@ hr {
   text-transform: capitalize;
 }
 
- .date {
+.date {
+  font-size: 15px;
   opacity: 0.6;
   margin-bottom: 5px;
 }
@@ -85,11 +86,10 @@ hr {
 .icons {
   width: 35px;
   margin-bottom: 10px;
-  
 }
 
 .temp {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .low-temp {
