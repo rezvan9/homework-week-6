@@ -12,7 +12,6 @@ hr {
   display: block;
   margin: 0 auto;
   max-width: 600px;
-
 }
 
 #main-page {
@@ -77,6 +76,10 @@ hr {
   text-transform: capitalize;
 }
 
+ .date {
+  opacity: 0.6;
+}
+
 .icons {
   width: 35px;
   margin-bottom: 10px;
@@ -84,6 +87,10 @@ hr {
 
 .temp {
   font-size: 14px;
+}
+
+.low-temp {
+  opacity: 0.6;
 }
 
 .search-section {
@@ -132,7 +139,6 @@ hr {
 
 a {
   text-decoration: none;
-  
 }
 
 a:hover {
