@@ -26,14 +26,15 @@ function formatDate(timeStamp) {
   currentDate.innerHTML = `last updated : ${days[day]} ${hours} : ${minutes}`;
 }
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data.list);
+
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Tue","Wed","Thu"];
+  let days = ["Tue", "Wed", "Thu"];
   let forecastHTML = `<div class="row">`;
 
-  days.forEach(function(day){
-
+  days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `<div class="col-2">
@@ -54,6 +55,13 @@ function showForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "b3a312b2823c477f40bbb6c6210a1736";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(showForecast);
 }
 
 function showWeather(response) {
@@ -92,6 +100,7 @@ function showWeather(response) {
     response.data.wind.speed
   );
   formatDate(response.data.dt * 1000);
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -169,4 +178,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
 
 searchCity("banff");
-showForecast();
