@@ -56,20 +56,8 @@ hr {
   top: -20px;
 }
 
-#today-low {
-  font-size: 20px;
-  opacity: 0.7;
-  margin-right: 30px;
-}
-
-#today-high {
-  font-size: 20px;
-  font-weight: bold;
-  margin-left: 18px;
-}
-
 .info-box {
-  margin-top: 30px;
+  margin-top: 10px;
   font-size: 13px;
 }
 
