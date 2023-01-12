@@ -49,7 +49,7 @@ function showForecast(response) {
         `<div class="col-2">
                   <p class="date">${formatDay(forecastDay.time)}</p>
                   <img
-                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                       forecastDay.condition.icon
                     }.png"
                     
@@ -87,7 +87,7 @@ function showWeather(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
 
   document.querySelector("#city-name").innerHTML = response.data.city;
