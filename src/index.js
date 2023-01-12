@@ -95,8 +95,6 @@ function showWeather(response) {
     response.data.temperature.current
   );
 
-  celsiusTemp = response.data.temperature.current;
-
   document.querySelector(".description").innerHTML =
     response.data.condition.description;
 
@@ -125,53 +123,7 @@ function showCity(event) {
   searchCity(city);
 }
 
-function searchLocation(position) {
-  console.log(position)
-  let apiKey = "5dd9064aa0ft48879adcb6c3384704co";
-  let units = "metric";
-  let url = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${units}`;
-
-  axios.get(url).then(showWeather);
-}
-
-function showPosition(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
-function showFahrenheit(event) {
-  event.preventDefault();
-
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let fahrenheitTemp = Math.round((celsiusTemp * 9) / 5 + 32);
-
-  let currentDegree = document.querySelector("#current-deg");
-  currentDegree.innerHTML = fahrenheitTemp;
-}
-
-function showCelsius(event) {
-  event.preventDefault();
-
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-
-  document.querySelector("#current-deg").innerHTML = Math.round(celsiusTemp);
-}
-
-let celsiusTemp = null;
-
 let form = document.querySelector(".form");
 form.addEventListener("submit", showCity);
-
-let button = document.querySelector(".btn-secondary");
-button.addEventListener("click", showPosition);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsius);
 
 searchCity("banff");

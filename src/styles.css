@@ -41,23 +41,22 @@ hr {
   text-transform: capitalize;
 }
 
-.degrees .active {
+.degree {
   color: #fff;
-  cursor: default;
-}
-
-.degrees .active:hover {
-  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  top: -10px;
+  right: -25px;
 }
 
 #current-deg {
-  font-size: 30px;
+  font-size: 35px;
   position: relative;
   top: -20px;
 }
 
 .info-box {
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 13px;
 }
 
@@ -89,7 +88,7 @@ hr {
 }
 
 .search-box {
-  width: 60%;
+  width: 75%;
   background-color: #dece9c;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-size: small;
@@ -102,23 +101,15 @@ hr {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   font-size: 16px;
   border-radius: 30px;
-  padding: 5px 15px;
+  padding: 5px 20px;
   transition: all 200ms ease-in-out;
 }
 
 .btn-primary {
-  background-color: #1a1831;
+  background-color: #a21232;
 }
 
 .btn-primary:hover {
-  background-color: #a21232;
-}
-
-.btn-secondary {
-  background-color: #a21232;
-}
-
-.btn-secondary:hover {
   background-color: #1a1831;
 }
 
