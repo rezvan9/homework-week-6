@@ -41,14 +41,16 @@ function showForecast(response) {
 
   let forecastHTML = `<div class="row">`;
 
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-                  <p class="date">${formatDay(forecastDay.data.daily.time)}</p>
+  forecast.forEach(function (forecastDay, index) {
+
+    if (index > 0) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+                  <p class="date">${formatDay(forecastDay.time)}</p>
                   <img
                     src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-                      forecastDay.data.daily.icon
+                      forecastDay.condition.icon
                     }.png"
                     
                     alt="weather-icons"
@@ -57,14 +59,15 @@ function showForecast(response) {
                   <br />
                   <span class="temp">
                     <span class="low-temp">${Math.round(
-                      forecastDay.data.daily.temperature.minimum
+                      forecastDay.temperature.minimum
                     )}°</span>
                     <strong>${Math.round(
-                      forecastDay.data.daily.temperature.maximum
+                      forecastDay.temperature.maximum
                     )}°</strong>
                   </span>
                 </div>
               `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -80,8 +83,7 @@ function getForecast(city) {
 }
 
 function showWeather(response) {
-  console.log(response);
-
+  
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -124,9 +126,10 @@ function showCity(event) {
 }
 
 function searchLocation(position) {
-  let apiKey = "b3a312b2823c477f40bbb6c6210a1736";
+  console.log(position)
+  let apiKey = "5dd9064aa0ft48879adcb6c3384704co";
   let units = "metric";
-  let url = `https://api.openweathermap.org/data/2.5/weather?&lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${units}&APPID=${apiKey}`;
+  let url = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${units}`;
 
   axios.get(url).then(showWeather);
 }
